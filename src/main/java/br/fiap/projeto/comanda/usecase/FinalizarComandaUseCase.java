@@ -53,13 +53,8 @@ public class FinalizarComandaUseCase implements IAtualizarComandaUseCase {
         return comanda.get();
     }
 
-    private String enviarStatusPedido(UUID codigoPedido) throws IntegracaoPedidoException {
-        try {
-            return comandaPedidoIntegration.prontificar(codigoPedido.toString()).getBody();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IntegracaoPedidoException("Erro ao tentar informar status pronto ao pedido!");
-        }
+    private String enviarStatusPedido(UUID codigoPedido) {
+        return comandaPedidoIntegration.prontificar(codigoPedido.toString()).getBody();
     }
 
 }
