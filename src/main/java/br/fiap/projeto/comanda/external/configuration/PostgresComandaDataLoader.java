@@ -2,7 +2,6 @@ package br.fiap.projeto.comanda.external.configuration;
 
 import br.fiap.projeto.comanda.entity.Comanda;
 import br.fiap.projeto.comanda.entity.enums.StatusComanda;
-import br.fiap.projeto.comanda.usecase.exception.EntradaInvalidaException;
 import br.fiap.projeto.comanda.usecase.port.repository.ICriarComandaRepositoryUseCase;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;

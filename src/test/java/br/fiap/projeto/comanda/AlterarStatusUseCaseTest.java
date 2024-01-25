@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.Optional;
 import java.util.UUID;
 
-public class AlterarStatusUseCaseTest {
+class AlterarStatusUseCaseTest {
 
     @InjectMocks
     private FinalizarComandaUseCase finalizarComandaUseCase;
@@ -38,7 +38,7 @@ public class AlterarStatusUseCaseTest {
 
     @BeforeEach
     public void setUp() {
-         autoCloseable = MockitoAnnotations.openMocks(this);
+        autoCloseable = MockitoAnnotations.openMocks(this);
     }
 
     @AfterEach
@@ -49,7 +49,7 @@ public class AlterarStatusUseCaseTest {
     }
 
     @Test
-    public void alterarStatusUseCaseTest() throws EntradaInvalidaException {
+    void alterarStatusUseCaseTest() throws EntradaInvalidaException {
 
         Comanda comanda = new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.EM_PREPARACAO);
 
