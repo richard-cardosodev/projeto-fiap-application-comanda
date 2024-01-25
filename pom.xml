@@ -114,14 +114,6 @@
 		</dependency>
 		<!-- Fim -->
 
-		<!-- Inserir dependências jacoco -->
-<!--
-		<dependency>
-			<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>${jacoco.version}</version>
-		</dependency>-->
-
 		<!-- Inserir dependências do cucumber -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -246,7 +238,7 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude>br/fiap/projeto/identificacao/external/config/**</exclude>
+						<exclude>br/fiap/projeto/**/external/config/**</exclude>
 						<exclude>br/fiap/projeto/AplicacaoProjetoFiap*</exclude>
 					</excludes>
 				</configuration>
