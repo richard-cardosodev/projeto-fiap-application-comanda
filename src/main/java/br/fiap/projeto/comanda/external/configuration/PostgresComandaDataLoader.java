@@ -34,13 +34,8 @@ public class PostgresComandaDataLoader {
                 new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.RECEBIDO)
 
         );
-        list.stream().forEach(c -> {
-            try {
-                comandaRepositoryUseCase.criar(c);
-            } catch (EntradaInvalidaException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
-            }
-        });
+        for (Comanda comanda : list) {
+            comandaRepositoryUseCase.criar(comanda);
+        }
     }
 }
