@@ -23,7 +23,7 @@ public class PostgresComandaDataLoader {
     @SneakyThrows
     public void init() {
         List<Comanda> list = Arrays.asList(
-                new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.EM_PREPARACAO),
+                new Comanda(UUID.randomUUID(), UUID.fromString("9bd3e7ee-13f0-4197-9cfe-8e29972fffc2"), StatusComanda.EM_PREPARACAO),
                 new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.EM_PREPARACAO),
                 new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.EM_PREPARACAO),
                 new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.FINALIZADO),

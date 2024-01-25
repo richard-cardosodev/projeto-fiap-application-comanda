@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "comandaPedidoIntegration", url = "http://${pedido.host}/pedidos")
+@FeignClient(value = "comandaPedidoIntegration", url = "http://localhost:${server.port}/pedidos")
 public interface ComandaPedidoIntegration {
     // @ResponseBody
     @RequestMapping(method = RequestMethod.PUT, value = "/{codigo}/prontificar")

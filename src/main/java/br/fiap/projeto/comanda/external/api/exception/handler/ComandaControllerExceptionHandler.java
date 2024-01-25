@@ -15,23 +15,23 @@ import javax.persistence.EntityNotFoundException;
 
 @ControllerAdvice(basePackageClasses = CriarComandaApiExternal.class)
 public class ComandaControllerExceptionHandler {
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<ComandaResponseException> handleEntityNotFoundException(Exception e) {
-        ComandaResponseException response = new ComandaResponseException(2001, e.getMessage(), e.getCause());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-    }
+//    @ExceptionHandler(EntityNotFoundException.class)
+//    public ResponseEntity<ComandaResponseException> handleEntityNotFoundException(Exception e) {
+//        ComandaResponseException response = new ComandaResponseException(2001, e.getMessage(), e.getCause());
+//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+//    }
 
-    @ExceptionHandler(EntradaInvalidaException.class)
-    public ResponseEntity<ComandaResponseException> handleEntradaInvalida(Exception e) {
-        ComandaResponseException response = new ComandaResponseException(2003, e.getMessage(), e.getCause());
-        return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body(response);
-    }
+//    @ExceptionHandler(EntradaInvalidaException.class)
+//    public ResponseEntity<ComandaResponseException> handleEntradaInvalida(Exception e) {
+//        ComandaResponseException response = new ComandaResponseException(2003, e.getMessage(), e.getCause());
+//        return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body(response);
+//    }
 
-    @ExceptionHandler(IntegracaoPedidoException.class)
-    public ResponseEntity<ComandaResponseException> handleIntegracaoPedido(Exception e) {
-        ComandaResponseException response = new ComandaResponseException(2004, e.getMessage(), e.getCause());
-        return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(response);
-    }
+//    @ExceptionHandler(IntegracaoPedidoException.class)
+//    public ResponseEntity<ComandaResponseException> handleIntegracaoPedido(Exception e) {
+//        ComandaResponseException response = new ComandaResponseException(2004, e.getMessage(), e.getCause());
+//        return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(response);
+//    }
 
     @ExceptionHandler(ComandaDuplicadaException.class)
     public ResponseEntity<ComandaResponseException> handleComandaDuplicada(Exception e) {
@@ -39,16 +39,16 @@ public class ComandaControllerExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
     }
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ComandaResponseException> handleDataIntegrityViolationException(Exception e) {
-        ComandaResponseException response = new ComandaResponseException(2002, e.getMessage(), e.getCause());
-        return ResponseEntity.unprocessableEntity().body(response);
-    }
+//    @ExceptionHandler(DataIntegrityViolationException.class)
+//    public ResponseEntity<ComandaResponseException> handleDataIntegrityViolationException(Exception e) {
+//        ComandaResponseException response = new ComandaResponseException(2002, e.getMessage(), e.getCause());
+//        return ResponseEntity.unprocessableEntity().body(response);
+//    }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ComandaResponseException> handleException(Exception e) {
-        e.printStackTrace();
-        ComandaResponseException response = new ComandaResponseException(2000, e.getMessage(), e.getCause());
-        return ResponseEntity.internalServerError().body(response);
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<ComandaResponseException> handleException(Exception e) {
+//        e.printStackTrace();
+//        ComandaResponseException response = new ComandaResponseException(2000, e.getMessage(), e.getCause());
+//        return ResponseEntity.internalServerError().body(response);
+//    }
 }

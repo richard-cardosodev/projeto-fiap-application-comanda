@@ -15,8 +15,8 @@ public class Comanda {
 
 	private StatusComanda status;
 
-	public Comanda() {
-	}
+//	public Comanda() {
+//	}
 
 	public Comanda(UUID codigoComanda, UUID codigoPedido, StatusComanda status)
 			throws EntradaInvalidaException, StatusNuloException {
@@ -26,12 +26,12 @@ public class Comanda {
 		validarDados();
 	}
 
-	public Comanda(ComandaDTO comandaDTO) throws EntradaInvalidaException {
-		this.codigoComanda = comandaDTO.getCodigoComanda();
-		this.codigoPedido = comandaDTO.getCodigoPedido();
-		this.status = comandaDTO.getStatus();
-
-	}
+//	public Comanda(ComandaDTO comandaDTO) throws EntradaInvalidaException {
+//		this.codigoComanda = comandaDTO.getCodigoComanda();
+//		this.codigoPedido = comandaDTO.getCodigoPedido();
+//		this.status = comandaDTO.getStatus();
+//
+//	}
 
 	public UUID getCodigoPedido() {
 		return codigoPedido;
