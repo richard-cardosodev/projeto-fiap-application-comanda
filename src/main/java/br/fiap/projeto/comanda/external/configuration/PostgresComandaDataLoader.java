@@ -2,7 +2,6 @@ package br.fiap.projeto.comanda.external.configuration;
 
 import br.fiap.projeto.comanda.entity.Comanda;
 import br.fiap.projeto.comanda.entity.enums.StatusComanda;
-import br.fiap.projeto.comanda.usecase.exception.EntradaInvalidaException;
 import br.fiap.projeto.comanda.usecase.port.repository.ICriarComandaRepositoryUseCase;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +33,8 @@ public class PostgresComandaDataLoader {
                 new Comanda(UUID.randomUUID(), UUID.randomUUID(), StatusComanda.RECEBIDO)
 
         );
-        list.stream().forEach(c -> {
-            try {
-                comandaRepositoryUseCase.criar(c);
-            } catch (EntradaInvalidaException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
-            }
-        });
+        for (Comanda comanda : list) {
+            comandaRepositoryUseCase.criar(comanda);
+        }
     }
 }
