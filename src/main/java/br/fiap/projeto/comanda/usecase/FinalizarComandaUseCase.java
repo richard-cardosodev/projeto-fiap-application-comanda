@@ -41,7 +41,7 @@ public class FinalizarComandaUseCase implements IAtualizarComandaUseCase {
         comanda = finalizaComandaRepositoryUseCase.atualizar(comanda);
 
         String codigo = enviarStatusPedido(comanda.getCodigoPedido());
-        if (codigo == null) {
+        if (codigo == null || codigo.isEmpty()) {
             throw new EntradaInvalidaException(comanda.getStatus().toString());
         }
         return comanda;
